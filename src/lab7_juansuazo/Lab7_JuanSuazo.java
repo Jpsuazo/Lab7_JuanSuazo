@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class Lab7_JuanSuazo {
 
    static Scanner entrada = new Scanner(System.in);
+   static Random random = new Random();
     public static void main(String[] args) {
         int opcion;
         do {
@@ -25,30 +26,64 @@ public class Lab7_JuanSuazo {
             switch (opcion) {
                 case 1:
                     char [][] tablero = new char [10][15];
-                    Random random = new Random();
+                    char[][] tablero2 = new char[10][15];
+                    int cantidades =0;
+                    int filaspac;
+                    int columnaspac;
+                    int[] filasfantasmita = new int[3];
+                    int[] columnasfantasmita = new int[3];
+                    char[] fantasmas = {'R','M','G'};
+                    boolean Cristiano = false;
+                    boolean Ronaldo = false;
                     for (int i = 0; i < tablero.length; i++) {
                         for (int j = 0; j < tablero[i].length; j++) {
-                            tablero[i][j]='*';
+                            tablero[i][j] = '*';
+                            tablero2[i][j]='*';
+                            
                             
                         }
                         
                     }
-                    int filas;
-                    int columnas;
-                    do {
-                        filas = random.nextInt(5, 10);
-                        columnas = random.nextInt(5, 15);
-                    } while (filas== 0 && columnas == 0);
-                    tablero[filas][columnas] =  'B';
                     
-                    for (int i = 0; i < tablero.length; i++) {
-                        for (int j = 0; j < tablero[i].length; j++) {
-                            System.out.print(tablero[i][j]+" ");
-                            
-                        }
-                        System.out.println();
+                    for (int i = 0; i < 8; i++) {
+                        int filasobstaculo = 0;
+                        int columnasobstaculo = 0;
+                        do {
+                            filasobstaculo = random.nextInt(10);
+                            columnasobstaculo = random.nextInt(15);
+                        } while (tablero[filasobstaculo][columnasobstaculo] != '*');
+                        tablero [filasobstaculo][columnasobstaculo] = 'O';
+                        
                         
                     }
+                    do {
+                        filaspac = random.nextInt(10);
+                        columnaspac = random.nextInt(15);
+                    } while (tablero[filaspac][columnaspac] != '*');
+                    tablero[filaspac][columnaspac] = 'C';
+                    for (int i = 0; i < 3; i++) {
+                        int filasfantasmas = 0;
+                        int columnasfantasmas = 0;
+                        do {
+                            filasfantasmas = random.nextInt(10);
+                            columnasfantasmas = random.nextInt(15);
+                        } while (tablero[filasfantasmas][columnasfantasmas]!= '*');
+                        filasfantasmita[i] = filasfantasmas;
+                        columnasfantasmita[i]=columnasfantasmas;
+                        tablero[filasfantasmas][columnasfantasmas] = fantasmas[i];
+                        
+                    }
+                    
+                     int filasfrutas = 0;
+                        int columnasfrutas = 0;
+                    do {
+                        filasfrutas = random.nextInt(10);
+                        columnasfrutas = random.nextInt(15);
+                        
+                    } while (tablero[filasfrutas][columnasfrutas] != '*');
+                    tablero[filasfrutas][columnasfrutas] = 'B';
+                    
+                    
                     break;
                     
                 case 2:
