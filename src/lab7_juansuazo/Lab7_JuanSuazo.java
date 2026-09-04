@@ -17,9 +17,9 @@ public class Lab7_JuanSuazo {
     public static void main(String[] args) {
         int opcion;
         do {
-            System.out.println("iniciar el pacman");
-            System.out.println("Volver an jugar ");
-            System.out.println("Ingrese una opcion");
+            System.out.println("1. iniciar el pacman");
+            System.out.println("2. Volver an jugar ");
+            System.out.println("3. Ingrese una opcion");
             System.out.println("Salir");
             opcion = entrada.nextInt();
             switch (opcion) {
@@ -36,10 +36,10 @@ public class Lab7_JuanSuazo {
                     int filas;
                     int columnas;
                     do {
-                        filas = random.nextInt(10);
-                        columnas = random.nextInt(15);
+                        filas = random.nextInt(5, 10);
+                        columnas = random.nextInt(5, 15);
                     } while (filas== 0 && columnas == 0);
-                    tablero[filas][columnas] = 'o';
+                    tablero[filas][columnas] =  'B';
                     
                     for (int i = 0; i < tablero.length; i++) {
                         for (int j = 0; j < tablero[i].length; j++) {
