@@ -33,6 +33,7 @@ public class Lab7_JuanSuazo {
                     int[] filasfantasmita = new int[3];
                     int[] columnasfantasmita = new int[3];
                     char[] fantasmas = {'R','M','G'};
+                    int puntos = 0;
                     boolean Cristiano = false;
                     boolean Ronaldo = false;
                     for (int i = 0; i < tablero.length; i++) {
@@ -82,7 +83,69 @@ public class Lab7_JuanSuazo {
                         
                     } while (tablero[filasfrutas][columnasfrutas] != '*');
                     tablero[filasfrutas][columnasfrutas] = 'B';
-                    
+                     System.out.println("Bienvenido a Pacman");
+                     System.out.println("Puntos|| " + puntos);
+//                     for (int i = 0; i < tablero.length; i++) {
+//                         for (int j = 0; j < tablero[i].length; j++) {
+//                             System.out.print(tablero[i][j]+ " ");
+//                             
+//                             
+//                         }
+//                         System.out.println();
+//                    }
+                     
+                     char movimiento = ' ';
+                     while (movimiento != 'W' || movimiento != 'S' || movimiento != 'A' || movimiento != 'D') {
+                         for (int i = 0; i < tablero.length; i++) {
+                             for (int j = 0; j < tablero[i].length; j++) {
+                                 System.out.print(tablero[i][j]+ " ");
+                             }
+                             System.out.println();
+                             
+                         }
+                         System.out.println("W(ARRIBA)");
+                         System.out.println("S(ABAJO)");
+                         System.out.println("A(IZQUIERDA)");
+                         System.out.println("D(DERECHA)");
+                         movimiento = entrada.next().toLowerCase().charAt(0);
+                         if (movimiento == 'w') {
+                             if (filaspac > 0) {
+                                 filaspac--;
+                                 
+                             }
+                             
+                         }
+                         if (movimiento == 's') {
+                             if (filaspac > 0) {
+                                 filaspac++;
+                                 
+                             }
+                             
+                         }
+                         if (movimiento == 'a') {
+                             if (columnaspac >0) {
+                                 columnaspac--;
+                                 
+                                 
+                             }
+                             
+                         }
+                         if (movimiento == 'd') {
+                             if (columnaspac > 0) {
+                                 columnaspac++;
+                                 
+                             }
+                             
+                         }
+                         
+                        tablero[filaspac][columnaspac] = ' ';
+                         System.out.println();
+                    }
+                     
+                     
+                     
+                     
+                     
                     
                     break;
                     
